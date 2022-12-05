@@ -1,0 +1,5 @@
+(library
+ (name prr)
+ (public_name prr)
+ (modules prr jv jstr fut brr)
+ (libraries js_of_ocaml))

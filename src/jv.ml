@@ -217,7 +217,7 @@ module Error = struct
 
   let message e = to_jstr (get (Obj.magic e) "message")
   let stack e = to_jstr (get (Obj.magic e) "stack")
-  let to_result e = Error e
+  let[@warning "-32"] to_result e = Error e
 end
 
 external of_error : Error.t -> t = "%identity"
