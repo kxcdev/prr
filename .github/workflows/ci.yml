@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  build:
+    if: github.event.pull_request.draft == false
+    strategy:
+      fail-fast: false
+      matrix:
+        ocaml-version:
+          - 4.12.1
+          - 4.13.1
+          - 4.14.0
+        # node-version:
+        #   - lts/fermium # v14 Maintenance LTS
+        #   - lts/gallium # v16 Active LTS
+        #   - 17
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/kxcteam/ocaml-general:${{ matrix.ocaml-version }}
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+      #     cache: yarn
+
+      # https://github.blog/2022-04-12-git-security-vulnerability-announced/
+      - name: Set safe directory
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE
+
+      - name: Initialize submodules
+        run: git submodule update --init
+
+      - name: Check OCaml version and workspace info
+        run: ./scripts/ci_print_env.sh
+
+      - name: Install OPAM dependencies
+        run: |
+          opam update
+          opam install -y dune
+          opam uninstall -y brr
+          opam install -y . --deps-only --with-test
+
+      - name: Perform dune build
+        run: opam exec -- dune build
+
+      - name: Perform dune runtest
+        run: opam exec -- dune runtest
