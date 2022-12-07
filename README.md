@@ -6,16 +6,25 @@ Prr is a fork of [Brr][brr], which provides a subset of its APIs:
 * `Jstr`: JavaScript strings.
 * `Jv`: JavaScript values.
 * `Fut`: Future values.
-* `Brr.*`: Various utils on JavaScript globals, with the following omissions when compared to brr:
-  - DOM related globals their utils (e.g. `Ev`, `At`, `El` modules)
-  - `Abort` module
-  - `Window` module
-  - `Navigator` module
-  - `Performance` module
-  - animation timing related utils
+* `Brr.*`: Various utils on JavaScript globals, but with some omissions when compared to brr:
+  | Included? | Module(s) | Comments |
+  |--|--|--|
+  | ❌ | `Ev`, `At`, `El` (DOM related) | |
+  | ❌ | `Abort` | |
+  | ❌ | `Window` | |
+  | ❌ | `Navigator` | |
+  | ❌ | `Performance` | |
+  | ❌ | `File` | |
+  | 🟡 | `G` | most are included, except globals regarding the above omitted modules and utils related to animated timing |
+  | ✅ | Tarray | |
+  | ✅ | Blob | |
+  | ✅ | Base64 | |
+  | ✅ | Json | |
+  | ✅ | Uri | |
+  | ✅ | Console | |
 
-Prr focuses on providing Brr's JavaScript FFI APIs only, and intended to run
-both in the browser and in node.js.
+Prr focuses on providing Brr's JavaScript FFI facilities and selected utils modules;
+and is intended to be used in Web / Node.js / React Native development.
 
 Prr is distributed under the ISC license. It depends on the [`js_of_ocaml`][jsoo]
 compiler and runtime – but not on its libraries or syntax extension.
