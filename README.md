@@ -1,47 +1,51 @@
-# !!!work-(fork)-in-progress
-
-brr — Browser programming toolkit for OCaml
+prr — (almost-)brr-compatible JavaScript FFI library sans browser-only APIs
 -------------------------------------------------------------------------------
-%%VERSION%%
 
-Brr is a toolkit for programming browsers in OCaml with the
-[`js_of_ocaml`][jsoo] compiler. It provides:
+Prr is a fork of [Brr][brr], which provides a subset of its APIs:
 
-* Interfaces to a selection of browser APIs.
-* Note based reactive support (optional and experimental).
-* An OCaml console developer tool for live interaction 
-  with programs running in web pages.
-* A JavaScript FFI for idiomatic OCaml programming.
+* `Jstr`: JavaScript strings.
+* `Jv`: JavaScript values.
+* `Fut`: Future values.
+* `Brr.*`: Various utils on JavaScript globals, but with some omissions when compared to brr:
+  | Included? | Module(s) | Comments |
+  |--|--|--|
+  | ❌ | `Ev`, `At`, `El` (DOM related) | |
+  | ❌ | `Abort` | |
+  | ❌ | `Window` | |
+  | ❌ | `Navigator` | |
+  | ❌ | `Performance` | |
+  | ❌ | `File` | |
+  | 🟡 | `G` | most are included, except globals regarding the above omitted modules and utils related to animated timing |
+  | ✅ | Tarray | |
+  | ✅ | Blob | |
+  | ✅ | Base64 | |
+  | ✅ | Json | |
+  | ✅ | Uri | |
+  | ✅ | Console | |
 
-Brr is distributed under the ISC license. It depends on [Note][note]
-and on the `js_of_ocaml` compiler and runtime – but not on its
-libraries or syntax extension.
+Prr focuses on providing Brr's JavaScript FFI facilities and selected utils modules;
+and is intended to be used in Web / Node.js / React Native development.
 
-[note]: https://erratique.ch/software/note
+Prr is distributed under the ISC license. It depends on the [`js_of_ocaml`][jsoo]
+compiler and runtime – but not on its libraries or syntax extension.
+
+[brr]:  https://erratique.ch/software/brr
 [jsoo]: https://ocsigen.org/js_of_ocaml
 
-Homepage: https://erratique.ch/software/brr  
+Please also see Brr's official homepage: https://erratique.ch/software/brr
 
 ## Installation
 
-Brr can be installed with `opam`:
+Add this repository as a git submodule, then use the
+[vendoring](https://dune.readthedocs.io/en/stable/dune-files.html#vendored-dirs-since-1-11)
+feature of `dune`.
 
-    opam install brr
+Prr may also be available on `opam` in future:
 
-If you don't use `opam` consult the [`opam`](opam) file for build
-instructions.
+    opam install prr # not for now
 
 ## Documentation
 
-The documentation can be consulted [online][doc] or via `odig doc brr`.
+Please see Brr's [official documentation][doc].
 
 [doc]: https://erratique.ch/software/brr/doc
-
-## Sample programs
-
-Not much for now. A few basic programs are in the [test suite](test).
-
-An implementation of the [TodoMVC][todomvc] application with `brr.note` is 
-in [todomvc.ml](test/todomvc.ml).
-
-[todomvc]: http://todomvc.com/
