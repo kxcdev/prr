@@ -5,9 +5,9 @@
 - switch to dune (3.0)
 - naming the fork `prr`, as a "lighter" version of `brr`
 - keeping only the following from the original brr:
-- `Jstr`: JavaScript strings.
-- `Jv`: JavaScript values.
-- `Fut`: Future values.
+  - `Jstr`: JavaScript strings.
+  - `Jv`: JavaScript values.
+  - `Fut`: Future values.
   - `Brr.*`: Various utils on JavaScript globals, but with some omissions when compared to brr:
     | Included? | Module(s) | Comments |
     |--|--|--|
