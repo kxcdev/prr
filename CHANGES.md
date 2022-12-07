@@ -1,5 +1,5 @@
-## prr v0.1.0 -- (planned) first release of prr
-- first release of the [fork](https://github.com/kxcdev/prr)
+## Version 0.1.0 of prr (planned)
+- first release of this [fork](https://github.com/kxcdev/prr)
 
 ## The forking
 - switch to dune (3.0)
