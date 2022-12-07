@@ -49,6 +49,7 @@ jobs:
         run: |
           opam update
           opam install -y dune
+          opam uninstall -y brr
           opam install -y . --deps-only --with-test
 
       - name: Perform dune build
