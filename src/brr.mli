@@ -432,61 +432,6 @@ module Blob : sig
   (**/**)
 end
 
-(** File objects and reads.
-
-    There are various ways to get {!File.t} values. On of them is to create
-    an {!El.input} element of type [file] and use the
-    {!El.Input.files} function. Another way is to use drag and
-    drop events and get them via the {!Ev.Data_transfer} values. *)
-module File : sig
-
-  (** {1:files Files} *)
-
-  type init
-  (** The type for file initialisation objects. *)
-
-  val init : ?blob_init:Blob.init -> ?last_modified_ms:int -> unit -> init
-  (** [init ()] is a file initialisation object with
-      the given
-      {{:https://w3c.github.io/FileAPI/#ref-for-dfn-BlobPropertyBag%E2%91%A0}
-      properties}. *)
-
-  type t
-  (** The type for {{:https://developer.mozilla.org/en-US/docs/Web/API/File}
-      [File]} objects. *)
-
-  val of_blob : ?init:init -> Jstr.t -> Blob.t -> t
-  (** [of_blob name b] is a file named [name] with data [b].
-
-      {b Note.} Reading the
-      {{:https://w3c.github.io/FileAPI/#file-constructor} constructor
-      specificaton} it seems this will not look into [b] to define the
-      {!Blob.type'} of the resulting file object's
-      {{!as_blob}blob}. You should define it via the [init] object. *)
-
-  val name : t -> Jstr.t
-  (** [name f] is the
-      {{:https://developer.mozilla.org/en-US/docs/Web/API/File/name}filename}
-      of [f]. *)
-
-  val relative_path : t -> Jstr.t
-  (** [relative_path] is the
-      {{:https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath}[webkitRelativePath]}
-      of [f]. *)
-
-  val last_modified_ms : t -> int
-  (** [last_modified_ms f] is the
-      {{:https://developer.mozilla.org/en-US/docs/Web/API/File/lastModified}
-      last modified time} in milliseconds since the POSIX epoch. *)
-
-  external as_blob : t -> Blob.t = "%identity"
-  (** [as_blob f] is [f]'s {!Blob} interface. *)
-
-  (**/**)
-  include Jv.CONV with type t := t
-  (**/**)
-end
-
 (** [base64] codec.
 
     As performed by {{:https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa}[btoa]} and

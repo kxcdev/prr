@@ -415,31 +415,6 @@ module Blob = struct
   let text b = Fut.of_promise ~ok:Jv.to_jstr (Jv.call b "text" [||])
 end
 
-module File = struct
-  type t = Jv.t
-  include (Jv.Id : Jv.CONV with type t := t)
-
-  (* Initialisation objects *)
-
-  type init = Jv.t
-  let init ?blob_init ?last_modified_ms () =
-    let o = match blob_init with None -> Jv.obj [||] | Some b -> Jv.repr b in
-    Jv.Int.set_if_some o "lastModified" last_modified_ms;
-    o
-
-  let file = Jv.get Jv.global "File"
-  let of_blob ?(init = Jv.obj [||]) name b =
-    Jv.new' file [|Blob.to_jv b; Jv.of_jstr name; init|]
-
-  let name f = Jv.Jstr.get f "name"
-  let relative_path f =
-    let p = Jv.find_map Jv.to_jstr f "webkitRelativePath" in
-    Option.value ~default:Jstr.empty p
-
-  let last_modified_ms f = Jv.Int.get f "lastModified"
-  external as_blob : t -> Blob.t = "%identity"
-end
-
 module Base64 = struct
 
   type data = Jstr.t
