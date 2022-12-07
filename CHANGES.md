@@ -25,6 +25,6 @@
     | ✅ | Uri | |
     | ✅ | Console | |
 
-## Before the fork (from brr)
-See [fork-point/CHANGES.md](https://github.com/kxcdev/prr/blob/c64b00bbe043526e602906e9b9ce12fd4a40da20/CHANGES.md).
+## Before the forking (from [dbuenzli/brr](https://github.com/dbuenzli/brr))
+See [	&#60;fork-point&#62;/CHANGES.md](https://github.com/kxcdev/prr/blob/c64b00bbe043526e602906e9b9ce12fd4a40da20/CHANGES.md).
 
