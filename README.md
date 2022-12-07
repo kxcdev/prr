@@ -1,4 +1,4 @@
-prr — brr-compatible JavaScript FFI library
+prr — (almost-)brr-compatible JavaScript FFI library sans browser-only APIs
 -------------------------------------------------------------------------------
 
 Prr is a fork of [Brr][brr], which provides a subset of its APIs:
@@ -6,6 +6,13 @@ Prr is a fork of [Brr][brr], which provides a subset of its APIs:
 * `Jstr`: JavaScript strings.
 * `Jv`: JavaScript values.
 * `Fut`: Future values.
+* `Brr.*`: Various utils on JavaScript globals, with the following omissions when compared to brr:
+  - DOM related globals their utils (e.g. `Ev`, `At`, `El` modules)
+  - `Abort` module
+  - `Window` module
+  - `Navigator` module
+  - `Performance` module
+  - animation timing related utils
 
 Prr focuses on providing Brr's JavaScript FFI APIs only, and intended to run
 both in the browser and in node.js.
