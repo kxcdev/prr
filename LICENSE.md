@@ -1,7 +1,9 @@
 # Prr copyrights
 
 All sources except
+
 - `src/*`, excluding `src/prr.*`, `src/brr.*`, and `src/dune`
+
 are distributed under the following license:
 
 ```
