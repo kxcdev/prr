@@ -12,6 +12,7 @@ bug-reports: "https://github.com/kxcdev/prr/issues"
 depends: [
   "dune" {>= "2.0"}
   "ocaml" {>= "4.08.0"}
+  "js_of_ocaml" {>= "4.0.0"}
   "js_of_ocaml-compiler" {>= "4.0.0"}
 ]
 build: [

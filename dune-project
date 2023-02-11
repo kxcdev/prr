@@ -17,4 +17,5 @@
  (description "A fork of brr, sans browser-only APIs; see https://github.com/kxcdev/prr and https://github.com/dbuenzli/brr for details")
  (depends
   (ocaml (>= 4.08.0))
+  (js_of_ocaml (>= 4.0.0))
   (js_of_ocaml-compiler (>= 4.0.0))))
