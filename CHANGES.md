@@ -1,3 +1,7 @@
+## Version 0.1.1 of prr (tag: [0.1.1](https://github.com/kxcdev/prr/releases/tag/0.1.1))
+- attempt to fix opam CI reported issue
+  - change to (lang dune 2.7) in dune-project
+
 ## Version 0.1.0 of prr (tag: [0.1.0](https://github.com/kxcdev/prr/releases/tag/0.1.0))
 - first release of this [fork](https://github.com/kxcdev/prr)
 
