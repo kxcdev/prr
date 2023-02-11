@@ -6,6 +6,7 @@
 module Jstr = Jstr
 module Jv = Jv
 module Fut = Fut
+module Brr = Brr
 include Brr
 
 (*---------------------------------------------------------------------------
