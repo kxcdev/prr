@@ -10,14 +10,13 @@ license: "ISC"
 homepage: "https://github.com/kxcdev/prr"
 bug-reports: "https://github.com/kxcdev/prr/issues"
 depends: [
-  "dune" {>= "3.0"}
+  "dune" {>= "2.0"}
   "ocaml" {>= "4.08.0"}
-  "js_of_ocaml-compiler" {>= "4.1.0"}
-  "js_of_ocaml-toplevel" {>= "4.1.0"}
-  "odoc" {with-doc}
+  "js_of_ocaml-compiler" {>= "4.0.0"}
+  "js_of_ocaml-toplevel" {>= "4.0.0"}
 ]
 build: [
-  ["dune" "subst"] {dev}
+  ["dune" "subst"] {pinned}
   [
     "dune"
     "build"
