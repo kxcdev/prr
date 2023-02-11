@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/kxcteam/ocaml-general:${{ matrix.ocaml-version }}
-    timeout-minutes: 10
+    timeout-minutes: 25
 
     steps:
       - name: Checkout code
