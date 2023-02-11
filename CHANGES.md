@@ -1,4 +1,4 @@
-## Version 0.1.0 of prr (planned)
+## Version 0.1.0 of prr (tag: [0.1.0](https://github.com/kxcdev/prr/releases/tag/0.1.0))
 - first release of this [fork](https://github.com/kxcdev/prr)
 
 ## The forking
