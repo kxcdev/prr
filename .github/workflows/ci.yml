@@ -13,9 +13,10 @@ jobs:
       fail-fast: false
       matrix:
         ocaml-version:
-          - 4.12.1
+          - 4.08.2
           - 4.13.1
           - 4.14.0
+          - 5.0.0
         # node-version:
         #   - lts/fermium # v14 Maintenance LTS
         #   - lts/gallium # v16 Active LTS
