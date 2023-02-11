@@ -1,6 +1,6 @@
 (lang dune 2.0)
 (name prr)
-(version ~dev)
+(version 0.1.0)
 
 (license ISC)
 (maintainers "Haochen Xie <hx@kxc.inc>" "KXC Members <hello@kxc.inc>")
