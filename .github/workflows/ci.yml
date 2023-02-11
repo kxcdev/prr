@@ -8,13 +8,11 @@ on:
 
 jobs:
   check:
-    if: github.event.pull_request.draft == false
     strategy:
       fail-fast: false
       matrix:
         ocaml-version:
           - 4.13.1
-          - 4.14.0
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/kxcteam/ocaml-general:${{ matrix.ocaml-version }}
