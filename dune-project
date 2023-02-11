@@ -3,7 +3,7 @@
 (version ~dev)
 
 (license ISC)
-(maintainers "Haochen Xie <hx@kxc.inc>" "KXC Members <info@kxc.inc>")
+(maintainers "Haochen Xie <hx@kxc.inc>" "KXC Members <hello@kxc.inc>")
 (authors "The brr programmers" "KXC Members and Contributors")
 
 (source
