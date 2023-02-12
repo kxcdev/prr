@@ -4,9 +4,10 @@
 
 ## Version 0.1.0 of prr (tag: [0.1.0](https://github.com/kxcdev/prr/releases/tag/0.1.0))
 - first release of this [fork](https://github.com/kxcdev/prr)
+- this release uses (lang dune 2.0) in dune-project
 
 ## The forking
-- switch to dune (3.0)
+- switch to dune (~3.0~ 2.0)
 - naming the fork `prr`, as a "lighter" version of `brr`
 - keeping only the following from the original brr:
   - `Jstr`: JavaScript strings.
