@@ -34,10 +34,8 @@ jobs:
 
       - name: Install OPAM dependencies
         run: |
-          opam update
-          opam install -y dune
           opam uninstall -y brr
-          opam install -y . --deps-only --with-test
+          opam install -y . --deps-only --with-test || (opam update && opam install -y . --deps-only --with-test)
 
       - name: Perform dune build
         run: opam exec -- dune build
