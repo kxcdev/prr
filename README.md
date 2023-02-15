@@ -1,6 +1,8 @@
 prr — (almost-)brr-compatible JavaScript FFI library sans browser-only APIs
 -------------------------------------------------------------------------------
 
+[![GitHub CI][action-badge]][action-link]
+
 Prr is a fork of [Brr][brr], which provides a subset of its APIs:
 
 * `Jstr`: JavaScript strings.
@@ -34,15 +36,25 @@ compiler and runtime – but not on its libraries or syntax extension.
 
 Please also see Brr's official homepage: https://erratique.ch/software/brr
 
+[action-badge]: https://github.com/kxcdev/prr/workflows/CI/badge.svg?branch=main
+[action-link]: https://github.com/kxcdev/prr/actions?query=workflow:"CI"
+
 ## Installation
+
+### With OPAM
+
+Prr is available on opam: https://opam.ocaml.org/packages/prr/
+
+To install prr with opam, simply run `opam install prr`.
+
+You can also install a specific branch or commit with `opam pin add prr https://github.com/kxcdev/prr.git#GIT_REF`.
+See https://opam.ocaml.org/doc/Usage.html#opam-pin for more about this feature of opam.
+
+### Vendor with dune
 
 Add this repository as a git submodule, then use the
 [vendoring](https://dune.readthedocs.io/en/stable/dune-files.html#vendored-dirs-since-1-11)
 feature of `dune`.
-
-Prr may also be available on `opam` in future:
-
-    opam install prr # not for now
 
 ## Documentation
 
