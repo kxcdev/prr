@@ -1,6 +1,8 @@
 prr — (almost-)brr-compatible JavaScript FFI library sans browser-only APIs
 -------------------------------------------------------------------------------
 
+[![GitHub CI][action-badge]][action-link]
+
 Prr is a fork of [Brr][brr], which provides a subset of its APIs:
 
 * `Jstr`: JavaScript strings.
@@ -33,6 +35,9 @@ compiler and runtime – but not on its libraries or syntax extension.
 [jsoo]: https://ocsigen.org/js_of_ocaml
 
 Please also see Brr's official homepage: https://erratique.ch/software/brr
+
+[action-badge]: https://github.com/kxcdev/prr/workflows/CI/badge.svg?branch=main
+[action-link]: https://github.com/kxcdev/prr/actions?query=workflow:"CI"
 
 ## Installation
 
