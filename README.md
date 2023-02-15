@@ -36,7 +36,8 @@ compiler and runtime – but not on its libraries or syntax extension.
 
 Please also see Brr's official homepage: https://erratique.ch/software/brr
 
-[action-badge]: https://github.com/kxcdev/prr/workflows/GitHub%20CI/badge.svg?branch=main
+[action-badge]: https://github.com/kxcdev/prr/workflows/CI/badge.svg?branch=main
+[action-link]: https://github.com/kxcdev/prr/actions?query=workflow:"CI"
 
 ## Installation
 
