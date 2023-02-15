@@ -43,7 +43,7 @@ jobs:
       - name: Perform dune runtest
         run: opam exec -- dune runtest
 
-  matrix:
+  matrix-check:
     strategy:
       fail-fast: false
       matrix:
