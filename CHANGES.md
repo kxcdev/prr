@@ -1,3 +1,9 @@
+## Next version of prr
+- catch-up with upstream at
+  https://github.com/dbuenzli/brr/commit/f3813f02272901e23cd0af364934b192700c3d84
+  - the only relevant parts are docstr updates in src/brr.ml
+    (see [the diff](https://github.com/dbuenzli/brr/commit/f3813f02272901e23cd0af364934b192700c3d84#diff-70a6e64ad8ca24f310db82f833a2259027adbfeae0e5678f183bb437b08fe27f))
+
 ## Version 0.1.1 of prr (tag: [0.1.1](https://github.com/kxcdev/prr/releases/tag/0.1.1))
 - attempt to fix opam CI reported issue
   - change to (lang dune 2.7) in dune-project
