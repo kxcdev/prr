@@ -55,9 +55,12 @@ let of_list fs =
   let to_list l = Jv.Promise.resolve (Jv.to_list Obj.magic l) in
   fut @@ Jv.Promise.bind all to_list
 
+(* NB: this function contains prr-only bug-fix suggested in
+   https://github.com/ocsigen/js_of_ocaml/issues/1589#issuecomment-2014892340
+   which is not (yet) in brr yet *)
 let tick ~ms =
   fut @@ Jv.Promise.create @@ fun res _rej ->
-  ignore (Jv.apply (Jv.get Jv.global "setTimeout") Jv.[| repr res; of_int ms |])
+  ignore (Jv.apply (Jv.get Jv.global "setTimeout") Jv.[| callback ~arity:1 res; of_int ms |])
 
 (* Converting with JavaScript promises *)
 
